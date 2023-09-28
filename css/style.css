@@ -1,0 +1,87 @@
+@charset "utf-8";
+
+body {
+    margin: 0px;
+}
+
+section {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    justify-content: center;
+}
+
+h1 {
+    font-size: xx-large;
+}
+
+section {
+    margin-bottom: 100px;
+}
+
+mark {
+    background: linear-gradient(transparent 40%, rgb(251, 255, 0) 0%);
+    font-weight: bold;
+}
+
+.mark1 {
+    font-size: large;
+}
+
+.mark2 {
+    font-size: x-large;
+}
+
+.explanationFunction {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+    /* justify-content: center; */
+    gap: 50pt;
+}
+
+.explanationFunction img {
+    width: 50%;
+    max-width: 250px;
+    min-width: 200;
+    margin: auto;
+    /* text-align: center; */
+}
+
+.yellowBack {
+    background-color: #FFFDC9;
+}
+
+.orangeBack {
+    background-color: #F8DAAE;
+}
+
+.explanationBlock {
+    flex-grow: 1;
+    width: 300px;
+    margin-bottom: 40pt;
+    text-align: center;
+}
+
+.explanationBlock h2,
+.explanationBlock p {
+    text-align: left;
+}
+
+.gradationBackground {
+    height: 200px;
+    background: linear-gradient(120deg, #FCFF00, #FFA8A8);
+    background: -moz-linear-gradient(120deg, #FCFF00, #FFA8A8);
+    background: -webkit-linear-gradient(120deg, #FCFF00, #FFA8A8);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.titleText {
+}
+
+.test {
+    background-color: #F8DAAE;
+}
