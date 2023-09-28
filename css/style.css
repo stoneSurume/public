@@ -80,7 +80,8 @@ mark {
 }
 
 .titleText {
-    font-size: 300%;
+    font-stretch: extra-expanded;
+    font-size: min(10vw, 60px);
     padding-top: 48px;
     color: white;
     font-weight: bold;
@@ -116,8 +117,8 @@ mark {
     /*横幅を100%に*/
     padding: 0 0;
 }
-#header_menu_right {
-    padding: 100px;
+#header_menu_right a{
+    padding: 3px;
 }
 #header_menu img {
     width: 30px;
