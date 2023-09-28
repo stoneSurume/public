@@ -77,11 +77,68 @@ mark {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
 
 .titleText {
+    font-size: 300%;
+    padding-top: 48px;
+    color: white;
+    font-weight: bold;
 }
 
 .test {
     background-color: #F8DAAE;
+}
+#header_appName {
+    font-weight: bold;
+}
+#header_menu {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    /*ポジションを固定する*/
+    top: 0px;
+    /*一番上に設置*/
+    left: 0px;
+    z-index: 9999;
+    /*どの要素よりも上にくるように*/
+
+    backdrop-filter: blur(20px);
+    background-color: rgba(254, 255, 224, 0.125);
+    box-shadow: rgba(0, 0, 0, 0.3) 5px 4px 4px;
+    border: 1px rgba(255,255,255,0.4) solid;
+    border-bottom: 1px rgba(40,40,40,0.35) solid;
+    /*メニューバー背景色*/
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+    width: 100%;
+    /*横幅を100%に*/
+    padding: 0 0;
+}
+#header_menu_right {
+    padding: 100px;
+}
+#header_menu img {
+    width: 30px;
+}
+#header_menu a {
+    font-size: 100%;
+    color: #000000;
+    text-decoration: none;
+}
+
+#header_menu div {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    /*メニューを横並びにする*/
+    padding: 10px;
+}
+
+#header_menu a:after {
+    /*floatでデザインが崩れないように*/
+    display: block;
+    clear: both;
+    content: "";
 }
