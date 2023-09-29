@@ -12,7 +12,17 @@ section {
 }
 
 h1 {
-    font-size: xx-large;
+    font-size: x-large;
+
+    padding: 0.5em;
+    /*文字周りの余白*/
+    color: #494949;
+    /*文字色*/
+    background: #fffaf4;
+    /*背景色*/
+    border-left: solid 5px #ffaf58;
+    /*左線（実線 太さ 色）*/
+
 }
 
 section {
@@ -25,11 +35,11 @@ mark {
 }
 
 .mark1 {
-    font-size: large;
+    /* font-size: large; */
 }
 
 .mark2 {
-    font-size: x-large;
+    /* font-size: x-large; */
 }
 
 .explanationFunction {
@@ -70,9 +80,9 @@ mark {
 
 .gradationBackground {
     height: 200px;
-    background: linear-gradient(120deg, #9d9f00, #FFA8A8);
-    background: -moz-linear-gradient(120deg, #cbcf00, #FFA8A8);
-    background: -webkit-linear-gradient(120deg, #d6da01, #db9393);
+    background: linear-gradient(120deg, #fbff12, #FFA8A8);
+    background: -moz-linear-gradient(120deg, #fbff12, #FFA8A8);
+    background: -webkit-linear-gradient(120deg, #fbff0280, #ffc1c1);
 
     display: flex;
     justify-content: center;
@@ -83,17 +93,34 @@ mark {
     font-stretch: extra-expanded;
     font-size: min(10vw, 60px);
     padding-top: 48px;
-    color: yellow;
+    color: rgb(255, 255, 255);
     font-weight: bold;
-    mix-blend-mode: luminosity;
+    /* mix-blend-mode: luminosity; */
+
+    display: inline-block;
+    background: linear-gradient(135deg, #ff3419 0%, #ffee02 100%);
+    background: -webkit-linear-gradient(-45deg, #ff6565 0%, #ffd000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+
+    /* background: linear-gradient(120deg, #fd6c2e, #f9fd00); */
+    /* -webkit-background-clip: text; */
+    /* -webkit-text-fill-color: transparent; */
 }
 
 .test {
     background-color: #F8DAAE;
 }
+
 #header_appName {
     font-weight: bold;
 }
+
+@media screen and (max-width: 959px) {}
+
+@media screen and (max-width: 519px) {}
+
 #header_menu {
     display: flex;
     justify-content: space-between;
@@ -105,11 +132,11 @@ mark {
     z-index: 9999;
     /*どの要素よりも上にくるように*/
 
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
     background-color: rgba(254, 255, 218, 0.658);
     box-shadow: rgba(0, 0, 0, 0.3) 5px 4px 4px;
-    border: 1px rgba(255,255,255,0.4) solid;
-    border-bottom: 1px rgba(40,40,40,0.35) solid;
+    border: 1px rgba(255, 255, 255, 0.4) solid;
+    border-bottom: 1px rgba(40, 40, 40, 0.35) solid;
     /*メニューバー背景色*/
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -118,12 +145,15 @@ mark {
     /*横幅を100%に*/
     padding: 0 0;
 }
-#header_menu_right a{
+
+#header_menu_right a {
     padding: 3px;
 }
+
 #header_menu img {
     width: 30px;
 }
+
 #header_menu a {
     font-size: 100%;
     color: #000000;
