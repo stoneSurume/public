@@ -6,19 +6,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/style.css">
   <title>ギガ活サポーター</title>
+  <script src="javaScript/hambergerMenu.js"></script>
 </head>
 
 <body>
   <div class="gradationBackground">
-    <div id="header_menu">
-      <div>
+    <div id="header">
+      <div class="nav_left">
         <img src="images/AppIcon.png" alt="アプリのアイコン">
         <a id="header_appName" href="">ギガ活サポーター</a>
       </div>
+      <div class="nav_menu">
+        <div class="nav_hamberger">
+          <!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
+          <input id="drawer_input" class="drawer_hidden" type="checkbox">
 
-      <div id="header_menu_right">
-        <a href="URL">プライバシーポリシー</a>
-        <a href="URL">お問い合わせ</a>
+          <!-- ハンバーガーアイコン -->
+          <label for="drawer_input" class="drawer_open"><span></span></label>
+
+        </div>
+        <div class="nav_underItems">
+          <div class="nav_content">
+            <ul class="nav_list">
+              <li class="nav_item"><a href="">プライバシーポリシー</a></li>
+              <li class="nav_item"><a href="">お問い合わせ</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
     <div class="titleText">ギガ活サポーター</div>

@@ -58,6 +58,14 @@ mark {
     /* text-align: center; */
 }
 
+.nav_left {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 10px;
+    padding-left: 10px;
+}
+
 .yellowBack {
     background-color: #FFFDC9;
 }
@@ -117,11 +125,11 @@ mark {
     font-weight: bold;
 }
 
-@media screen and (max-width: 959px) {}
+.drawer_hidden {
+    display: none;
+}
 
-@media screen and (max-width: 519px) {}
-
-#header_menu {
+#header {
     display: flex;
     justify-content: space-between;
     position: fixed;
@@ -146,31 +154,137 @@ mark {
     padding: 0 0;
 }
 
-#header_menu_right a {
-    padding: 3px;
+#header img {
+    width: 40px;
 }
 
-#header_menu img {
-    width: 30px;
-}
-
-#header_menu a {
+#header a {
     font-size: 100%;
     color: #000000;
     text-decoration: none;
 }
 
-#header_menu div {
+.nav_topItems {
     display: flex;
-    gap: 10px;
+}
+
+.nav_content li {
+    display: inline-block;
     align-items: center;
     /*メニューを横並びにする*/
     padding: 10px;
 }
 
-#header_menu a:after {
+#header a:after {
     /*floatでデザインが崩れないように*/
     display: block;
     clear: both;
     content: "";
 }
+
+@media screen and (max-width: 959px) {}
+
+@media screen and (max-width: 570px) {
+    #header_appName {
+        display: none;
+    }
+
+    #header {
+        display: block;
+    }
+
+    .nav_topItems {
+        display: flex;
+        justify-content: space-between;
+    }
+    /* ここから下がハンバーガーメニューに関するCSS */
+
+    /* チェックボックスを非表示にする */
+    .drawer_hidden {
+        display: none;
+    }
+
+    /* ハンバーガーアイコンの設置スペース */
+    .drawer_open {
+        display: flex;
+        height: 60px;
+        width: 60px;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 100;
+        /* 重なり順を一番上にする */
+        cursor: pointer;
+    }
+
+    /* ハンバーガーメニューのアイコン */
+    .drawer_open span,
+    .drawer_open span:before,
+    .drawer_open span:after {
+        content: '';
+        display: block;
+        height: 3px;
+        width: 25px;
+        border-radius: 3px;
+        background: #333;
+        transition: 0.5s;
+        position: absolute;
+    }
+
+    /* 三本線の一番上の棒の位置調整 */
+    .drawer_open span:before {
+        bottom: 8px;
+    }
+
+    /* 三本線の一番下の棒の位置調整 */
+    .drawer_open span:after {
+        top: 8px;
+    }
+
+    /* アイコンがクリックされたら真ん中の線を透明にする */
+    #drawer_input:checked~.drawer_open span {
+        background: rgba(255, 255, 255, 0);
+    }
+
+    /* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */
+    #drawer_input:checked~.drawer_open span::before {
+        bottom: 0;
+        transform: rotate(45deg);
+    }
+
+    #drawer_input:checked~.drawer_open span::after {
+        top: 0;
+        transform: rotate(-45deg);
+    }
+
+    /* メニューのデザイン*/
+    .nav_underItems {
+        display: block;
+        /* width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 100%; */
+        /* メニューを画面の外に飛ばす */
+        /* z-index: 99;
+        background: #fff; */
+        transition: .5s;
+    }
+
+    /* メニュー黒ポチを消す */
+    .nav_list {
+        list-style: none;
+    }
+
+    /* アイコンがクリックされたらメニューを表示 */
+    #drawer_input:checked~.nav_underItems {
+        display: block;
+        /* left: 0; */
+        /* メニューを画面に入れる */
+    }
+}
+
+
+/* .nav_content a {
+    padding: 3px;
+} */
