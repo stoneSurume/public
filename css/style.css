@@ -70,9 +70,9 @@ mark {
 
 .gradationBackground {
     height: 200px;
-    background: linear-gradient(120deg, #FCFF00, #FFA8A8);
-    background: -moz-linear-gradient(120deg, #FCFF00, #FFA8A8);
-    background: -webkit-linear-gradient(120deg, #FCFF00, #FFA8A8);
+    background: linear-gradient(120deg, #9d9f00, #FFA8A8);
+    background: -moz-linear-gradient(120deg, #cbcf00, #FFA8A8);
+    background: -webkit-linear-gradient(120deg, #d6da01, #db9393);
 
     display: flex;
     justify-content: center;
@@ -83,8 +83,9 @@ mark {
     font-stretch: extra-expanded;
     font-size: min(10vw, 60px);
     padding-top: 48px;
-    color: white;
+    color: yellow;
     font-weight: bold;
+    mix-blend-mode: luminosity;
 }
 
 .test {
@@ -104,8 +105,8 @@ mark {
     z-index: 9999;
     /*どの要素よりも上にくるように*/
 
-    backdrop-filter: blur(20px);
-    background-color: rgba(254, 255, 224, 0.125);
+    backdrop-filter: blur(10px);
+    background-color: rgba(254, 255, 218, 0.658);
     box-shadow: rgba(0, 0, 0, 0.3) 5px 4px 4px;
     border: 1px rgba(255,255,255,0.4) solid;
     border-bottom: 1px rgba(40,40,40,0.35) solid;
