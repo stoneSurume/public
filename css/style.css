@@ -130,7 +130,7 @@ mark {
 }
 
 #header {
-    display: flex;
+    display: block;
     justify-content: space-between;
     position: fixed;
     /*ポジションを固定する*/
@@ -163,16 +163,10 @@ mark {
     color: #000000;
     text-decoration: none;
 }
-
-.nav_topItems {
+.nav_top {
     display: flex;
-}
-
-.nav_content li {
-    display: inline-block;
+    justify-content: space-between;
     align-items: center;
-    /*メニューを横並びにする*/
-    padding: 10px;
 }
 
 #header a:after {
@@ -197,6 +191,11 @@ mark {
         display: flex;
         justify-content: space-between;
     }
+
+    .nav_underItems {
+        height: 100%;
+        flex-direction: column;
+    }
     /* ここから下がハンバーガーメニューに関するCSS */
 
     /* チェックボックスを非表示にする */
@@ -205,7 +204,7 @@ mark {
     }
 
     /* ハンバーガーアイコンの設置スペース */
-    .drawer_open {
+    .header__hamburger {
         display: flex;
         height: 60px;
         width: 60px;
@@ -218,57 +217,60 @@ mark {
     }
 
     /* ハンバーガーメニューのアイコン */
-    .drawer_open span,
-    .drawer_open span:before,
-    .drawer_open span:after {
+    .header__hamburger span,
+    .header__hamburger span:before,
+    .header__hamburger span:after {
         content: '';
         display: block;
         height: 3px;
         width: 25px;
         border-radius: 3px;
-        background: #333;
+        background: #333333;
         transition: 0.5s;
         position: absolute;
     }
 
     /* 三本線の一番上の棒の位置調整 */
-    .drawer_open span:before {
+    .header__hamburger span:before {
         bottom: 8px;
     }
 
     /* 三本線の一番下の棒の位置調整 */
-    .drawer_open span:after {
+    .header__hamburger span:after {
         top: 8px;
     }
 
     /* アイコンがクリックされたら真ん中の線を透明にする */
-    #drawer_input:checked~.drawer_open span {
+    .header__hamburger.active span {
         background: rgba(255, 255, 255, 0);
     }
 
     /* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */
-    #drawer_input:checked~.drawer_open span::before {
+    .header__hamburger.active span::before {
         bottom: 0;
         transform: rotate(45deg);
     }
 
-    #drawer_input:checked~.drawer_open span::after {
+    .header__hamburger.active span::after {
         top: 0;
         transform: rotate(-45deg);
     }
 
+
     /* メニューのデザイン*/
     .nav_underItems {
-        display: block;
-        /* width: 100%;
+        width: 100%;
         height: 100%;
-        position: fixed;
-        top: 0;
-        left: 100%; */
-        /* メニューを画面の外に飛ばす */
-        /* z-index: 99;
-        background: #fff; */
-        transition: .5s;
+        margin: 0;
+        opacity: 0;
+        line-height: 0;
+        transition: line-height 0.4s, padding 0.4s, opacity 0.4s;
+    }
+    /* アイコンがクリックされたらメニューを表示 */
+    .nav_underItems.active {
+        /* メニューを画面に入れる */
+        opacity: 1;
+        line-height: 1.5;
     }
 
     /* メニュー黒ポチを消す */
@@ -276,15 +278,18 @@ mark {
         list-style: none;
     }
 
-    /* アイコンがクリックされたらメニューを表示 */
-    #drawer_input:checked~.nav_underItems {
-        display: block;
-        /* left: 0; */
-        /* メニューを画面に入れる */
+    .nav_underItems {
+        animation: slideinTop 3s infinite;
+    }
+    @keyframes fadeIn {
+        0% {
+            transform: translateY(-50px);
+          }
+          100% {
+            transform: translateY(0);
+          }
+        
     }
 }
 
 
-/* .nav_content a {
-    padding: 3px;
-} */
